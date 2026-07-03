@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>
+Data Visualization Dashboard
+</title>
+
+<link rel="stylesheet"
+href="dashboard.css">
+
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ================= Sidebar ================= -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-chart-column"></i>
+
+<h2>
+
+DataViz
+
+</h2>
+
+</div>
+
+<ul class="menu">
+
+<li class="active">
+
+<a href="#">
+
+<i class="fa-solid fa-house"></i>
+
+Dashboard
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#charts">
+
+<i class="fa-solid fa-chart-line"></i>
+
+Charts
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#reports">
+
+<i class="fa-solid fa-file-lines"></i>
+
+Reports
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#statistics">
+
+<i class="fa-solid fa-chart-pie"></i>
+
+Statistics
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#users">
+
+<i class="fa-solid fa-users"></i>
+
+Users
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#settings">
+
+<i class="fa-solid fa-gear"></i>
+
+Settings
+
+</a>
+
+</li>
+
+<li>
+
+<a href="login.html">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Logout
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ================= Main Content ================= -->
+
+<main class="main-content">
+    <!-- ===========================
+        TOP NAVBAR
+=========================== -->
+
+<header class="topbar">
+
+    <div class="left-nav">
+
+        <button id="menuBtn">
+
+            <i class="fa-solid fa-bars"></i>
+
+        </button>
+
+        <h1>
+
+            Dashboard
+
+        </h1>
+
+    </div>
+
+    <div class="search-box">
+
+        <i class="fa-solid fa-magnifying-glass"></i>
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search reports, charts or users...">
+
+    </div>
+
+    <div class="right-nav">
+
+        <button
+            id="themeBtn"
+            class="icon-btn">
+
+            <i class="fa-solid fa-moon"></i>
+
+        </button>
+
+        <button
+            class="icon-btn notification">
+
+            <i class="fa-solid fa-bell"></i>
+
+            <span class="badge">
+
+                5
+
+            </span>
+
+        </button>
+
+        <button
+            class="icon-btn">
+
+            <i class="fa-solid fa-envelope"></i>
+
+        </button>
+
+        <div class="user-profile">
+
+            <img
+            src="https://ui-avatars.com/api/?name=Admin&background=0D8ABC&color=fff"
+            alt="Profile">
+
+            <div>
+
+                <h4>
+
+                    Admin
+
+                </h4>
+
+                <small>
+
+                    Administrator
+
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ===========================
+        DATE & TIME
+=========================== -->
+
+<section class="welcome">
+
+    <div>
+
+        <h2>
+
+            Welcome Back 👋
+
+        </h2>
+
+        <p>
+
+            Here's your latest dashboard overview.
+
+        </p>
+
+    </div>
+
+    <div class="date-box">
+
+        <h3 id="currentDate">
+
+            Friday, July 03, 2026
+
+        </h3>
+
+        <p id="currentTime">
+
+            10:30:00 AM
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        BREADCRUMB
+=========================== -->
+
+<div class="breadcrumb">
+
+    <span>
+
+        Home
+
+    </span>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <span>
+
+        Dashboard
+
+    </span>
+
+</div>
+
+<!-- ===========================
+        START DASHBOARD
+=========================== -->
+
+<section class="dashboard">
+    <!-- ===========================
+        STATISTICS CARDS
+=========================== -->
+
+<div class="stats-grid">
+
+    <!-- Card 1 -->
+
+    <div class="card">
+
+        <div class="card-icon blue">
+
+            <i class="fa-solid fa-chart-line"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h3 id="salesValue">
+
+                ₹2,45,000
+
+            </h3>
+
+            <p>
+
+                Total Sales
+
+            </p>
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +12.4%
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Card 2 -->
+
+    <div class="card">
+
+        <div class="card-icon green">
+
+            <i class="fa-solid fa-users"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h3 id="userValue">
+
+                12,548
+
+            </h3>
+
+            <p>
+
+                Active Users
+
+            </p>
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +8.6%
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Card 3 -->
+
+    <div class="card">
+
+        <div class="card-icon orange">
+
+            <i class="fa-solid fa-file-lines"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h3 id="reportValue">
+
+                842
+
+            </h3>
+
+            <p>
+
+                Reports Generated
+
+            </p>
+
+            <span class="positive">
+
+                <i class="fa-solid fa-arrow-trend-up"></i>
+
+                +5.3%
+
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- Card 4 -->
+
+    <div class="card">
+
+        <div class="card-icon red">
+
+            <i class="fa-solid fa-chart-pie"></i>
+
+        </div>
+
+        <div class="card-info">
+
+            <h3 id="growthValue">
+
+                89%
+
+            </h3>
+
+            <p>
+
+                Performance
+
+            </p>
+
+            <span class="negative">
+
+                <i class="fa-solid fa-arrow-trend-down"></i>
+
+                -1.2%
+
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===========================
+        QUICK STATS
+=========================== -->
+
+<div class="quick-stats">
+
+    <div class="quick-card">
+
+        <h4>
+
+            Today's Visitors
+
+        </h4>
+
+        <h2 id="visitorCount">
+
+            1,254
+
+        </h2>
+
+        <small>
+
+            Last updated just now
+
+        </small>
+
+    </div>
+
+    <div class="quick-card">
+
+        <h4>
+
+            Downloads
+
+        </h4>
+
+        <h2 id="downloadCount">
+
+            3,548
+
+        </h2>
+
+        <small>
+
+            CSV, PDF & JSON
+
+        </small>
+
+    </div>
+
+    <div class="quick-card">
+
+        <h4>
+
+            Active Projects
+
+        </h4>
+
+        <h2 id="projectCount">
+
+            24
+
+        </h2>
+
+        <small>
+
+            6 completed this week
+
+        </small>
+
+    </div>
+
+</div>
+<!-- ===========================
+        QUICK ACTIONS
+=========================== -->
+
+<section class="quick-actions">
+
+    <div class="section-title">
+
+        <h2>
+
+            Quick Actions
+
+        </h2>
+
+        <p>
+
+            Perform common dashboard operations instantly.
+
+        </p>
+
+    </div>
+
+    <div class="action-grid">
+
+        <button id="addReport" class="action-card">
+
+            <i class="fa-solid fa-plus"></i>
+
+            <h3>Add Report</h3>
+
+            <p>Create a new analytics report.</p>
+
+        </button>
+
+        <button id="exportCSV" class="action-card">
+
+            <i class="fa-solid fa-file-csv"></i>
+
+            <h3>Export CSV</h3>
+
+            <p>Download dashboard data as CSV.</p>
+
+        </button>
+
+        <button id="exportPDF" class="action-card">
+
+            <i class="fa-solid fa-file-pdf"></i>
+
+            <h3>Export PDF</h3>
+
+            <p>Generate a printable PDF report.</p>
+
+        </button>
+
+        <button id="printDashboard" class="action-card">
+
+            <i class="fa-solid fa-print"></i>
+
+            <h3>Print</h3>
+
+            <p>Print the complete dashboard.</p>
+
+        </button>
+
+        <button id="refreshDashboard" class="action-card">
+
+            <i class="fa-solid fa-rotate"></i>
+
+            <h3>Refresh</h3>
+
+            <p>Reload statistics and charts.</p>
+
+        </button>
+
+        <button id="settingsBtn" class="action-card">
+
+            <i class="fa-solid fa-gear"></i>
+
+            <h3>Settings</h3>
+
+            <p>Manage dashboard preferences.</p>
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        DASHBOARD SUMMARY
+=========================== -->
+
+<section class="summary-panel">
+
+    <div class="summary-card">
+
+        <h3>
+
+            Dashboard Summary
+
+        </h3>
+
+        <p>
+
+            This dashboard provides a real-time overview of reports,
+            users, statistics, sales, and data analytics. Use the
+            quick action buttons above to create reports, export
+            data, refresh charts, or configure application settings.
+
+        </p>
+
+    </div>
+
+    <div class="summary-card">
+
+        <h3>
+
+            Today's Highlights
+
+        </h3>
+
+        <ul>
+
+            <li>✅ 24 Active Projects</li>
+
+            <li>📊 842 Reports Generated</li>
+
+            <li>👥 12,548 Active Users</li>
+
+            <li>📈 Revenue Growth +12.4%</li>
+
+            <li>⭐ Overall Performance: 89%</li>
+
+        </ul>
+
+    </div>
+
+</section>
+<!-- ===========================
+        ANALYTICS SECTION
+=========================== -->
+
+<section class="analytics-section" id="charts">
+
+    <div class="section-title">
+
+        <h2>
+
+            Analytics Overview
+
+        </h2>
+
+        <p>
+
+            Visualize business performance using interactive charts.
+
+        </p>
+
+    </div>
+
+    <div class="chart-grid">
+
+        <!-- Line Chart -->
+
+        <div class="chart-card">
+
+            <div class="card-header">
+
+                <h3>
+
+                    Monthly Revenue
+
+                </h3>
+
+                <button>
+
+                    View
+
+                </button>
+
+            </div>
+
+            <canvas id="lineChart"></canvas>
+
+        </div>
+
+        <!-- Bar Chart -->
+
+        <div class="chart-card">
+
+            <div class="card-header">
+
+                <h3>
+
+                    Sales Comparison
+
+                </h3>
+
+                <button>
+
+                    View
+
+                </button>
+
+            </div>
+
+            <canvas id="barChart"></canvas>
+
+        </div>
+
+        <!-- Pie Chart -->
+
+        <div class="chart-card">
+
+            <div class="card-header">
+
+                <h3>
+
+                    User Distribution
+
+                </h3>
+
+                <button>
+
+                    View
+
+                </button>
+
+            </div>
+
+            <canvas id="pieChart"></canvas>
+
+        </div>
+
+        <!-- Doughnut Chart -->
+
+        <div class="chart-card">
+
+            <div class="card-header">
+
+                <h3>
+
+                    Project Status
+
+                </h3>
+
+                <button>
+
+                    View
+
+                </button>
+
+            </div>
+
+            <canvas id="doughnutChart"></canvas>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        RECENT ACTIVITY
+=========================== -->
+
+<section class="activity-section">
+
+    <div class="activity-card">
+
+        <h2>
+
+            Recent Activity
+
+        </h2>
+
+        <ul>
+
+            <li>
+
+                📊 Monthly sales report generated.
+
+            </li>
+
+            <li>
+
+                👤 New user registered.
+
+            </li>
+
+            <li>
+
+                📁 CSV report exported successfully.
+
+            </li>
+
+            <li>
+
+                📈 Dashboard statistics updated.
+
+            </li>
+
+            <li>
+
+                🔄 Analytics synchronized.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+    <div class="activity-card">
+
+        <h2>
+
+            Notifications
+
+        </h2>
+
+        <ul>
+
+            <li>
+
+                🔔 5 new reports available.
+
+            </li>
+
+            <li>
+
+                ⚠ Storage usage reached 75%.
+
+            </li>
+
+            <li>
+
+                ✅ System backup completed.
+
+            </li>
+
+            <li>
+
+                📅 Weekly report scheduled.
+
+            </li>
+
+            <li>
+
+                🎉 Dashboard running normally.
+
+            </li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ===========================
+        END DASHBOARD SECTION
+=========================== -->
+
+</section>
+
+</main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+
+</html>
